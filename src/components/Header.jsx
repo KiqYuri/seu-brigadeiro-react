@@ -32,18 +32,18 @@ export function Header() {
           <span className={underlineClasses("Página Inicial")}></span>
         </p>
         <p 
-          className={linkClasses("Sabores")}
-          onClick={() => handleClick("Sabores", "sabores")}
-        >
-          <span>Sabores</span>
-          <span className={underlineClasses("Sabores")}></span>
-        </p>
-        <p 
           className={linkClasses("Sobre")}
           onClick={() => handleClick("Sobre", "sobre")}
         >
           <span>Sobre</span>
           <span className={underlineClasses("Sobre")}></span>
+        </p>
+        <p 
+          className={linkClasses("Sabores")}
+          onClick={() => handleClick("Sabores", "sabores")}
+        >
+          <span>Sabores</span>
+          <span className={underlineClasses("Sabores")}></span>
         </p>
         <p 
           className={linkClasses("Redes Sociais")}
