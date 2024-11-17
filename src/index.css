@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-background-img {
+    background-image: url('./assets/background.png');
+  }
+}
+
 body {
   font-family: 'Nunito', sans-serif;
-  background-image: url(./assets/background.png);
 }
