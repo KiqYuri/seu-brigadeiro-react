@@ -34,7 +34,7 @@ npm install
 npm run dev
 ```
 
-O projeto estará disponível em `http://localhost:5173/` (ou a porta informada no terminal).
+O projeto estará disponível em `http://localhost:5173/`
 
 ## 📌 Status do Projeto
 ### ✅ O que já foi implementado:
@@ -48,5 +48,4 @@ O projeto estará disponível em `http://localhost:5173/` (ou a porta informada 
 - **Seção com os sabores de brigadeiro**
 
 ---
-Desenvolvido por [Kaique](https://github.com/KiqYuri) 💜
-
+Desenvolvido por [Kaique](https://github.com/KiqYuri) e [Yuri](https://github.com/orgs/KiqYuri/people/yurikoster1) 💜
