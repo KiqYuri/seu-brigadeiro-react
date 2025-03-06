@@ -1,25 +1,70 @@
-export function HeroContent() {
+import React, { useCallback, useEffect, useState } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
+import imagem1 from '../assets/sabores-fotos/1.jpg'
+import imagem2 from '../assets/sabores-fotos/2.jpg'
+import imagem3 from '../assets/sabores-fotos/3.jpg'
+
+export function EmblaCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: 'start' },
+    [Autoplay({ delay: 3000 })]
+  )
+
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setPrevBtnEnabled(emblaApi.canScrollPrev())
+    setNextBtnEnabled(emblaApi.canScrollNext())
+  }, [emblaApi])
+
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on('select', onSelect)
+  }, [emblaApi, onSelect])
+
   return (
-    <section className="bg-white	w-[85.375rem]" id="hero-content">
-      <div id="hero-content-left" className="flex flex-col items-start gap-4">
-        <h2 className="text-[3.75rem] font-bold leading-tight">
-          Encontre o
-          <div className="relative w-[361px] h-[90px] bg-[#794735] rotate-[-12deg] px-10 py-2 rounded-full mt-2">
-            <p className="text-[#FFFFFF] text-[3.625rem] leading-[120%] tracking-[0%] text-center">Brigadeiro</p>
-          </div>
-          da sua preferência.
-        </h2>
-        <p className="text-base text-gray-700">
-          O doce queridinho de todo mundo, agora com sabores novos. Receitas que agradam os mais diferentes gostos.
-        </p>
-        <button className="px-6 py-3 bg-[#794735] text-white rounded-lg text-lg font-medium hover:bg-[#633924]">
-          Peça Já
-        </button>
+    <div className="relative">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {[imagem1, imagem2, imagem3].map((img, index) => (
+            <div
+              key={index}
+              className="basis-full sm:basis-1/2 lg:basis-1/3 flex-shrink-0 px-2"
+            >
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border-2 shadow-md">
+                <img
+                  src={img}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div id="hero-content-right">
-
-      </div>
-    </section>
+      {/* Botões */}
+      <button
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md disabled:opacity-30 z-10"
+        onClick={scrollPrev}
+        disabled={!prevBtnEnabled}
+      >
+        ◀
+      </button>
+      <button
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md disabled:opacity-30 z-10"
+        onClick={scrollNext}
+        disabled={!nextBtnEnabled}
+      >
+        ▶
+      </button>
+    </div>
   )
 }
