@@ -1,8 +1,51 @@
-# React + Vite
+# Seu Brigadeiro - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma landing page desenvolvida em **React** com **Tailwind CSS** para divulgar a lojinha de brigadeiros "Seu Brigadeiro".
 
-Currently, two official plugins are available:
+## 🎨 Layout
+O design da landing page está disponível no Figma:
+[Seu Brigadeiro](https://www.figma.com/design/w9FovYebnB7eVH5AITDC1b/Seu-Brigadeiro?node-id=0-1&t=wxG6MAly7Pyctev6-1)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas
+- **React**
+- **Tailwind CSS**
+
+## 🛠️ Como instalar e rodar o projeto
+Siga os passos abaixo para configurar e rodar o projeto na sua máquina local.
+
+### 1️⃣ Clonar o repositório
+```bash
+git clone https://github.com/KiqYuri/seu-brigadeiro-react.git
+```
+
+### 2️⃣ Acessar o diretório do projeto
+```bash
+cd seu-brigadeiro-react
+```
+
+### 3️⃣ Instalar as dependências
+Certifique-se de ter o **Node.js** instalado e execute:
+```bash
+npm install
+```
+
+### 4️⃣ Rodar o projeto em ambiente de desenvolvimento
+```bash
+npm run dev
+```
+
+O projeto estará disponível em `http://localhost:5173/`
+
+## 📌 Status do Projeto
+### ✅ O que já foi implementado:
+- Estrutura inicial do projeto
+- Configuração do Tailwind CSS
+- Layout básico da landing page
+- Navbar
+
+### 🛠️ O que falta implementar:
+- **Hero Content** (Conteúdo principal da página)
+- **Seção com os sabores de brigadeiro**
+
+---
+Desenvolvido por [Kaique](https://github.com/KiqYuri) e [Yuri](https://github.com/orgs/KiqYuri/people/yurikoster1) 💜
