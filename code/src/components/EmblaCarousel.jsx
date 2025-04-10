@@ -40,7 +40,7 @@ export function EmblaCarousel() {
   }, [emblaApi, onSelect])
 
   return (
-    <div className="relative">
+    <div id='sabores' className="relative">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {imagens.map((img, index) => (
