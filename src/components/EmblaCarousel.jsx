@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
-// Carregamento dinâmico das imagens
 const imagensImportadas = import.meta.glob('../assets/sabores-fotos/*.jpg', {
   eager: true,
   import: 'default',
