@@ -5,7 +5,7 @@ export function Header() {
   const [activeLink, setActiveLink] = useState("Nosso Brigadeiro");
 
   const linkClasses = (link) => `
-    text-[1.25rem] m-6 group relative w-max cursor-pointer
+    text-[1.25rem] md:text-[1.5rem] m-6 group relative w-max cursor-pointer
     ${activeLink === link ? 'text-[#3A3A3A] font-bold' : 'text-[#000000] font-medium'}
     hover:text-[#794735]
   `;
@@ -24,42 +24,42 @@ export function Header() {
     <header className='flex items-center justify-between p-6'>
       <img src={logo} alt="Logo da Loja Seu Brigadeiro" className="h-12 w-auto" />
       <nav className="relative flex justify-between flex-wrap gap-3">
-        <p 
+        <p
           className={linkClasses("Nosso Brigadeiro")}
           onClick={() => handleClick("Nosso Brigadeiro", "header")}
         >
           <span>Nosso Brigadeiro</span>
           <span className={underlineClasses("Nosso Brigadeiro")}></span>
         </p>
-        <p 
+        <p
           className={linkClasses("Vantagens")}
           onClick={() => handleClick("Vantagens", "vantagens")}
         >
           <span>Vantagens</span>
           <span className={underlineClasses("Vantagens")}></span>
         </p>
-        <p 
+        <p
           className={linkClasses("Sabores")}
           onClick={() => handleClick("Sabores", "sabores")}
         >
           <span>Sabores</span>
           <span className={underlineClasses("Sabores")}></span>
         </p>
-        <p 
+        <p
           className={linkClasses("Depoimentos")}
           onClick={() => handleClick("Depoimentos", "depoimentos")}
         >
           <span>Depoimentos</span>
           <span className={underlineClasses("Depoimentos")}></span>
         </p>
-        <p 
+        <p
           className={linkClasses("Faça sua Encomenda")}
           onClick={() => handleClick("Faça sua Encomenda", "encomenda")}
         >
           <span>Faça sua Encomenda</span>
           <span className={underlineClasses("Faça sua Encomenda")}></span>
         </p>
-        <p 
+        <p
           className={linkClasses("Redes Sociais")}
           onClick={() => handleClick("Redes Sociais", "redes-sociais")}
         >
