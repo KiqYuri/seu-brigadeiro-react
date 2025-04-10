@@ -1,21 +1,9 @@
-<<<<<<< HEAD:code/src/components/EmblaCarousel.jsx
 import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-
-// Carregamento dinâmico das imagens
-const imagensImportadas = import.meta.glob('../assets/sabores-fotos/*.jpg', {
-  eager: true,
-  import: 'default',
-})
-
-const imagens = Object.entries(imagensImportadas).map(([path, src]) => {
-  const nomeArquivo = path.split('/').pop()?.split('.')[0] || 'Imagem'
-  return {
-    src,
-    alt: `Sabor ${nomeArquivo}`,
-  }
-})
+import imagem1 from '../assets/sabores-fotos/1.jpg'
+import imagem2 from '../assets/sabores-fotos/2.jpg'
+import imagem3 from '../assets/sabores-fotos/3.jpg'
 
 export function EmblaCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -45,19 +33,16 @@ export function EmblaCarousel() {
     <div className="relative">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
-          {imagens.map((img, index) => (
+          {[imagem1, imagem2, imagem3].map((img, index) => (
             <div
               key={index}
               className="basis-full sm:basis-1/2 lg:basis-1/3 flex-shrink-0 px-2"
             >
               <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border-2 shadow-md">
                 <img
-                  src={img.src}
-                  alt={img.alt}
+                  src={img}
+                  alt={`Slide ${index + 1}`}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.alt = 'Imagem não carregada'
-                  }}
                 />
               </div>
             </div>
@@ -83,31 +68,3 @@ export function EmblaCarousel() {
     </div>
   )
 }
-=======
-import React from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
-import imagem1 from '../assets/sabores-fotos/1.jpg'
-import imagem2 from '../assets/sabores-fotos/2.jpg'
-import imagem3 from '../assets/sabores-fotos/3.jpg'
-
-export function EmblaCarousel() {
-  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true}, [Autoplay({delay: 2000})])
-
-  return (
-    <div className="embla" ref={emblaRef}>
-      <div className="embla__container">
-        <div className="embla__slide">
-          <img src={imagem1} alt="Foto" />
-        </div>
-        <div className="embla__slide">
-        <img src={imagem2} alt="Foto" />
-        </div>
-        <div className="embla__slide">
-        <img src={imagem3} alt="Foto" />
-        </div>
-      </div>
-    </div>
-  )
-}
->>>>>>> a4889f6 (:sparkles: feature: Carousel of photos, just implement, not style yet):src/components/EmblaCarousel.jsx
