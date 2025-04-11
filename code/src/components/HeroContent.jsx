@@ -1,83 +1,46 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
+import heroImage from '../assets/heroImage.jpg';
 
-const imagensImportadas = import.meta.glob('../assets/sabores-fotos/*.jpg', {
-  eager: true,
-  import: 'default',
-})
-
-const imagens = Object.entries(imagensImportadas).map(([path, src]) => {
-  const nomeArquivo = path.split('/').pop()?.split('.')[0] || 'Imagem'
-  return {
-    src,
-    alt: `Sabor ${nomeArquivo}`,
-  }
-})
-
-export function EmblaCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'start' },
-    [Autoplay({ delay: 3000 })]
-  )
-
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return
-    setPrevBtnEnabled(emblaApi.canScrollPrev())
-    setNextBtnEnabled(emblaApi.canScrollNext())
-  }, [emblaApi])
-
-  useEffect(() => {
-    if (!emblaApi) return
-    onSelect()
-    emblaApi.on('select', onSelect)
-  }, [emblaApi, onSelect])
-
+export function HeroContent() {
   return (
-    <div id='sabores' className="relative">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {imagens.map((img, index) => (
-            <div
-              key={index}
-              className="basis-full sm:basis-1/2 lg:basis-1/3 flex-shrink-0 px-2"
-            >
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border-2 shadow-md">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.alt = 'Imagem não carregada'
-                  }}
-                />
-              </div>
-            </div>
-          ))}
+    <main
+      id="hero-content"
+      className="flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 py-12 max-w-7xl mx-auto gap-12"
+    >
+      {/* Lado Esquerdo */}
+      <div id="left" className="w-full lg:w-1/2 space-y-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight flex flex-wrap items-center gap-2 text-center lg:text-left">
+          Encontre o
+          <span className="inline-block bg-[#794735] text-white px-4 py-2 rounded-[50px]">
+            Brigadeiro
+          </span>
+          da sua preferência.
+        </h1>
+
+        <p className="text-lg sm:text-xl text-gray-600 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
+          O doce queridinho de todo mundo, agora com sabores novos. Receitas que agradam os mais diferentes gostos.
+        </p>
+
+        <div className="flex justify-center lg:justify-start">
+          <a
+            href="https://wa.me/5511979716726"
+            target="_blank"
+            className="inline-block bg-[#F03328] text-white font-semibold px-6 py-3 rounded-[38px] shadow-md hover:bg-red-600 transition text-lg"
+          >
+            Peça Já
+          </a>
         </div>
       </div>
 
-      {/* Botões */}
-      <button
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md disabled:opacity-30 z-10"
-        onClick={scrollPrev}
-        disabled={!prevBtnEnabled}
-      >
-        ◀
-      </button>
-      <button
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md disabled:opacity-30 z-10"
-        onClick={scrollNext}
-        disabled={!nextBtnEnabled}
-      >
-        ▶
-      </button>
-    </div>
-  )
+      {/* Lado Direito */}
+      <div id="right" className="w-full lg:w-1/2 mt-10 lg:mt-0">
+        <div className="overflow-hidden rounded-2xl shadow-lg border">
+          <img
+            src={heroImage}
+            alt="Bandeja com brigadeiros sortidos em diferentes sabores e coberturas"
+            className="w-full h-full max-h-[400px] lg:max-h-none object-cover"
+          />
+        </div>
+      </div>
+    </main>
+  );
 }

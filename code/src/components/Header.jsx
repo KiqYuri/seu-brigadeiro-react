@@ -18,7 +18,18 @@ export function Header() {
 
   const handleClick = (link, id) => {
     setActiveLink(link);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
+    if (link === "Cardápio") {
+      window.open(
+        "https://raw.githubusercontent.com/KiqYuri/seu-brigadeiro-react/main/src/assets/cardapio.pdf",
+        "_blank"
+      );
+      return;
+    }
+
+    if (id) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
