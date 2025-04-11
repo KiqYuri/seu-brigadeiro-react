@@ -1,9 +1,19 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import imagem1 from '../assets/sabores-fotos/1.jpg'
-import imagem2 from '../assets/sabores-fotos/2.jpg'
-import imagem3 from '../assets/sabores-fotos/3.jpg'
+
+const imagensImportadas = import.meta.glob('../assets/sabores-fotos/*.jpg', {
+  eager: true,
+  import: 'default',
+})
+
+const imagens = Object.entries(imagensImportadas).map(([path, src]) => {
+  const nomeArquivo = path.split('/').pop()?.split('.')[0] || 'Imagem'
+  return {
+    src,
+    alt: `Sabor ${nomeArquivo}`,
+  }
+})
 
 export function EmblaCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -30,19 +40,22 @@ export function EmblaCarousel() {
   }, [emblaApi, onSelect])
 
   return (
-    <div className="relative">
+    <div id='sabores' className="relative">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
-          {[imagem1, imagem2, imagem3].map((img, index) => (
+          {imagens.map((img, index) => (
             <div
               key={index}
               className="basis-full sm:basis-1/2 lg:basis-1/3 flex-shrink-0 px-2"
             >
               <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border-2 shadow-md">
                 <img
-                  src={img}
-                  alt={`Slide ${index + 1}`}
+                  src={img.src}
+                  alt={img.alt}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.alt = 'Imagem não carregada'
+                  }}
                 />
               </div>
             </div>
