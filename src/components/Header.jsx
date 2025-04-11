@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import logo from '../assets/logo.svg';
+import logo from '../assets/SeuBrigadeiroLogo.png';
+import cardapio from '../assets/cardapio.pdf';
 
 export function Header() {
   const [activeLink, setActiveLink] = useState("Nosso Brigadeiro");
@@ -22,11 +23,11 @@ export function Header() {
 
   return (
     <header className='flex items-center justify-between p-6'>
-      <img src={logo} alt="Logo da Loja Seu Brigadeiro" className="h-12 w-auto" />
-      <nav className="relative flex justify-between flex-wrap gap-3">
+      <img src={logo} alt="Logo da Loja Seu Brigadeiro" className="h-20 w-auto" />
+      <nav className="relative flex flex-wrap gap-2 justify-center md:justify-between">
         <p
           className={linkClasses("Nosso Brigadeiro")}
-          onClick={() => handleClick("Nosso Brigadeiro", "header")}
+          onClick={() => handleClick("Nosso Brigadeiro", "hero-content")}
         >
           <span>Nosso Brigadeiro</span>
           <span className={underlineClasses("Nosso Brigadeiro")}></span>
@@ -38,33 +39,36 @@ export function Header() {
           <span>Vantagens</span>
           <span className={underlineClasses("Vantagens")}></span>
         </p>
+
         <p
-          className={linkClasses("Sabores")}
-          onClick={() => handleClick("Sabores", "sabores")}
+          className={linkClasses("Cardápio")}
+          onClick={() => handleClick("Cardápio", "cardapio")}
         >
-          <span>Sabores</span>
-          <span className={underlineClasses("Sabores")}></span>
+          <span>Cardápio</span>
+          <span className={underlineClasses("Cardápio")}></span>
         </p>
-        <p
-          className={linkClasses("Depoimentos")}
-          onClick={() => handleClick("Depoimentos", "depoimentos")}
-        >
-          <span>Depoimentos</span>
-          <span className={underlineClasses("Depoimentos")}></span>
-        </p>
-        <p
+        <a
+          href="https://wa.me/5511979716726"
+          target="_blank"
           className={linkClasses("Faça sua Encomenda")}
-          onClick={() => handleClick("Faça sua Encomenda", "encomenda")}
         >
           <span>Faça sua Encomenda</span>
           <span className={underlineClasses("Faça sua Encomenda")}></span>
-        </p>
+        </a>
+
         <p
           className={linkClasses("Redes Sociais")}
           onClick={() => handleClick("Redes Sociais", "redes-sociais")}
         >
           <span>Redes Sociais</span>
           <span className={underlineClasses("Redes Sociais")}></span>
+        </p>
+        <p
+          className={linkClasses("Mais Vendidos")}
+          onClick={() => handleClick("Mais Vendidos", "mais-vendidos")}
+        >
+          <span>Mais Vendidos</span>
+          <span className={underlineClasses("Mais Vendidos")}></span>
         </p>
       </nav>
     </header>
