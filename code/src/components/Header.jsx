@@ -34,7 +34,7 @@ export function Header() {
 
   return (
     <header className='flex items-center justify-between p-6'>
-      <img src={logo} alt="Logo da Loja Seu Brigadeiro" className="h-20 w-auto" />
+      <a href="/"><img src={logo} alt="Logo da Loja Seu Brigadeiro" className="h-20 w-auto" /></a>
       <nav className="relative flex flex-wrap gap-2 justify-center md:justify-between">
         <p
           className={linkClasses("Nosso Brigadeiro")}
