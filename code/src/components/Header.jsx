@@ -12,7 +12,7 @@ export function Header() {
   `;
 
   const underlineClasses = (link) => `
-    absolute -bottom-1 left-0 transition-all h-0.5 
+    absolute -bottom-1 left-0 transition-all h-0.5
     ${activeLink === link ? 'w-full bg-[#794735]' : 'w-0 bg-transparent group-hover:w-full group-hover:bg-[#794735]'}
   `;
 
@@ -21,7 +21,7 @@ export function Header() {
 
     if (link === "Cardápio") {
       window.open(
-        "https://raw.githubusercontent.com/KiqYuri/seu-brigadeiro-react/main/src/assets/cardapio.pdf",
+        "https://raw.githubusercontent.com/KiqYuri/seu-brigadeiro-react/main/code/src/assets/cardapio.pdf",
         "_blank"
       );
       return;
