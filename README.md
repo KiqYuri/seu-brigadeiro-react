@@ -1,4 +1,4 @@
-# Seu Brigadeiro - Landing Page [![Netlify Status](https://api.netlify.com/api/v1/badges/c10d8740-8f78-444d-8f94-f7b93ac882bc/deploy-status)](https://app.netlify.com/sites/seubrigadeiro/deploys)
+# [Seu Brigadeiro](https://seubrigadeiro.netlify.app/) - Landing Page [![Netlify Status](https://api.netlify.com/api/v1/badges/c10d8740-8f78-444d-8f94-f7b93ac882bc/deploy-status)](https://app.netlify.com/sites/seubrigadeiro/deploys)
 **Languages:** [🇺🇸 English](README.md) | [🇧🇷 Português](README.pt.md)
 
 A React-based landing page with Tailwind CSS for the "Seu Brigadeiro" gourmet brigadeiro shop.
