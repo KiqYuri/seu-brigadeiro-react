@@ -51,4 +51,4 @@ O projeto estará disponível em `http://localhost:5173/`
 - Calculadora de preços
 
 ---
-Desenvolvido com 💜 por [Kaique Ferreira](https://github.com/kiqf) e [Yuri Koster](https://github.com/yurikoster1)
+Desenvolvido por [Kaique](https://github.com/kiqf) e [Yuri](https://github.com/yurikoster1) 💜

@@ -50,3 +50,5 @@ The application will be available at `http://localhost:5173/`
 -   Customer review system
 -   Expandable flavor gallery
 -   Price calculator
+
+Developed by [Kaique](https://github.com/kiqf) and [Yuri](https://github.com/yurikoster1) 💜
