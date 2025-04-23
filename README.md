@@ -1,51 +1,52 @@
-# Seu Brigadeiro - Landing Page
+# Seu Brigadeiro - Landing Page [![Netlify Status](https://api.netlify.com/api/v1/badges/c10d8740-8f78-444d-8f94-f7b93ac882bc/deploy-status)](https://app.netlify.com/sites/seubrigadeiro/deploys)
+**Languages:** [🇺🇸 English](README.md) | [🇧🇷 Português](README.pt.md)
 
-Este projeto é uma landing page desenvolvida em **React** com **Tailwind CSS** para divulgar a lojinha de brigadeiros "Seu Brigadeiro".
+A React-based landing page with Tailwind CSS for the "Seu Brigadeiro" gourmet brigadeiro shop.
 
-## 🎨 Layout
-O design da landing page está disponível no Figma:
-[Seu Brigadeiro](https://www.figma.com/design/w9FovYebnB7eVH5AITDC1b/Seu-Brigadeiro?node-id=0-1&t=wxG6MAly7Pyctev6-1)
+## 🎨 Design
+View the Figma layout:
+[Seu Brigadeiro Design](https://www.figma.com/design/w9FovYebnB7eVH5AITDC1b/Seu-Brigadeiro?node-id=0-1&t=wxG6MAly7Pyctev6-1)
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Tech Stack
 - **React**
 - **Tailwind CSS**
+- **Docker**
+- **Embla Carousel** (Product slider)
+- **Instagram Embed** (Social media integration)
 
-## 🛠️ Como instalar e rodar o projeto
-Siga os passos abaixo para configurar e rodar o projeto na sua máquina local.
+## 🛠️ Installation
 
-### 1️⃣ Clonar o repositório
+### Option 1: Using Node.js
 ```bash
 git clone https://github.com/KiqYuri/seu-brigadeiro-react.git
-```
-
-### 2️⃣ Acessar o diretório do projeto
-```bash
-cd seu-brigadeiro-react
-```
-
-### 3️⃣ Instalar as dependências
-Certifique-se de ter o **Node.js** instalado e execute:
-```bash
+cd seu-brigadeiro-react/code
 npm install
-```
-
-### 4️⃣ Rodar o projeto em ambiente de desenvolvimento
-```bash
 npm run dev
 ```
 
-O projeto estará disponível em `http://localhost:5173/`
+### Option 2: Using Docker
+```bash
+git clone https://github.com/KiqYuri/seu-brigadeiro-react.git
+cd seu-brigadeiro-react
+docker compose up --build
+```
 
-## 📌 Status do Projeto
-### ✅ O que já foi implementado:
-- Estrutura inicial do projeto
-- Configuração do Tailwind CSS
-- Layout básico da landing page
-- Navbar
+The application will be available at `http://localhost:5173/`
 
-### 🛠️ O que falta implementar:
-- **Hero Content** (Conteúdo principal da página)
-- **Seção com os sabores de brigadeiro**
+📌 Project Status
+-----------------
 
----
-Desenvolvido por [Kaique](https://github.com/KiqYuri) e [Yuri](https://github.com/orgs/KiqYuri/people/yurikoster1) 💜
+### ✅ Implemented Features:
+-   Responsive layout
+-   Hero section with CTA
+-   Interactive navbar with smooth scrolling
+-   Advantages section
+-   Best sellers carousel
+-   Instagram integration\
+-   PDF menu download
+-   Direct WhatsApp links
+
+### 🛠️ Future Improvements:
+-   Customer review system
+-   Expandable flavor gallery
+-   Price calculator
